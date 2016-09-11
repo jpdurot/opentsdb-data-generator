@@ -3,12 +3,12 @@ FROM node:argon
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
-COPY package.json /usr/src/app/
-COPY sources/* /usr/src/app/
+COPY . /usr/src/app/
 
 RUN npm install
 RUN npm run build
 
-COPY entrypoint.sh /usr/src/app
+ADD entrypoint.sh /
+RUN chmod u+x /entrypoint.sh
 
-ENTRYPOINT ["entrypoint.sh"]
+CMD ["/entrypoint.sh"]
