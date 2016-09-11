@@ -1,0 +1,17 @@
+{
+  "name": "opentsdb-data-generator",
+  "version": "1.0.0",
+  "description": "Node.js app for generating and sending timeseries data to OpenTSDB",
+  "author": "JP Durot <jeanphilippe.durot@gmail.com",
+  "main": "app.js",
+  "scripts": {
+    "start": "cd app && node app.js ./config.json",
+    "build": "tsc --outDir ./app --rootDir ./sources --target es5 --module commonjs && cp sources/config.json app/config.json"
+  },
+  "dependencies": {
+    "restler": "^3.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.10"
+  }
+}

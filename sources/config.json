@@ -1,0 +1,24 @@
+{
+    "hostId": "test-app",
+    "historianUrl" : "http://opentsdb-test.dcos.historize.it",
+    "packetSize": 200,
+    "statsRate" : 10000,
+    "acquisitionRate": 5,
+    "metrics" :
+    [
+        
+        {
+            "generator" : "sine",
+            "name": "jp.sine",
+            "amplitude": 5,
+            "duration": 2000
+        },
+        {
+            "generator" : "random",
+            "name" : "jp.random",
+            "minValue" : 0,
+            "maxValue" : 50
+        }
+    ]
+
+}
