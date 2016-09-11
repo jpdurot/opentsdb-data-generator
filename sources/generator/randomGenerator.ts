@@ -1,5 +1,5 @@
 import { IDataGenerator } from './IDataGenerator';
-import { Data } from '../Data';
+import { Data } from '../data';
 
 export class RandomGenerator implements IDataGenerator
 {
