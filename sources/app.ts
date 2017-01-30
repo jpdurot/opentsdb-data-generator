@@ -9,12 +9,16 @@ import { Data } from './data';
 import { IDataGenerator} from './generator/IDataGenerator';
 import { RandomGenerator} from './generator/randomGenerator';
 import { SineGenerator} from './generator/sineGenerator';
+import { BooleanGenerator} from './generator/booleanGenerator';
+import { StaticDataGenerator} from './generator/staticDataGenerator';
 
 // Implemented generators
 var generatorsType:any =
 {
     "random" : RandomGenerator,
-    "sine": SineGenerator
+    "sine": SineGenerator,
+    "boolean" : BooleanGenerator,
+    "static" : StaticDataGenerator
 };
 
 console.log("Reading config...");
