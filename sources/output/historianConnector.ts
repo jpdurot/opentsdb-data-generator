@@ -1,9 +1,10 @@
-import { Data } from './data';
+import { Data } from '../data';
+import {IOutputConnector} from './IOutputConnector';
 
 var client = require('restler');
 
 
-export class Sender 
+export class HistorianConnector implements IOutputConnector
 {
     private historianUrl:string;
     private stats:any;

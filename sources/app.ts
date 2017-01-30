@@ -1,10 +1,8 @@
 /// <reference path="../typings/index.d.ts" />
 
-
-
-
 import { Collector } from './collector';
-import { Sender } from './sender';
+import { IOutputConnector } from './output/IOutputConnector';
+import { HistorianConnector } from './output/historianConnector';
 import { Data } from './data';
 import { IDataGenerator} from './generator/IDataGenerator';
 import { RandomGenerator} from './generator/randomGenerator';
@@ -22,7 +20,7 @@ var generatorsType:any =
 };
 
 console.log("Reading config...");
-var config = require(process.argv[2]);
+var config = require(process.argv[2]); 
 
 console.log("Initializing...")
 
@@ -46,7 +44,7 @@ var statsRate = config.statsRate;
 //setTimeout(endGeneration,duration);
 
 // Init base objects
-var sender:Sender = new Sender(config.historianUrl);
+var sender:IOutputConnector = new HistorianConnector(config.historianUrl);
 var collector:Collector = new Collector(sender,config.packetSize);
 var lastStats = {
     success:0,
